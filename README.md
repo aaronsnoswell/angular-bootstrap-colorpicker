@@ -29,14 +29,7 @@ Or, if you don't swing that way,
 As of 26th / July / 2012, the only core differences between this library and
 Stefan's are as follows in the below diff.
 
-```diff
-133c133
-<   var Colorpicker = function(element, options, otheroptions){
----
->   var Colorpicker = function(element, options){
-143c143
-< 
----
+```javascript
 >       
 330,331d329
 <       var initialColor = (arguments[0] == "setColor") ? arguments[1] : null;
