@@ -140,7 +140,7 @@
 		this.picker = $(CPGlobal.template)
 							.appendTo('body')
 							.on('mousedown', $.proxy(this.mousedown, this));
-		
+
 		if (this.isInput) {
 			this.element.on({
 				'focus': $.proxy(this.show, this),
@@ -327,14 +327,23 @@
 	}
 
 	$.fn.colorpicker = function ( option ) {
+	    var initialColor = (arguments[0] == "setColor") ? arguments[1] : null;
+
 		return this.each(function () {
-			var $this = $(this),
-				data = $this.data('colorpicker'),
+			var $this = $(this);
+
+			$this.each(function() {
+				this.setAttribute("data-color", initialColor);
+			});
+
+			var	data = $this.data('colorpicker'),
 				options = typeof option == 'object' && option;
+
 			if (!data) {
 				$this.data('colorpicker', (data = new Colorpicker(this, $.extend({}, $.fn.colorpicker.defaults,options))));
 			}
-			if (typeof option == 'string') data[option]();
+
+			if (typeof option == 'string' && option != 'setColor') data[option]();
 		});
 	};
 
