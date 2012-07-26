@@ -13,13 +13,13 @@ This project is a simple port of [Stefan Petre](http://www.eyecon.ro/)'s
 
 After installation, using this directive is simple.
 
-{{{html
+{{{
     <a href="" class="btn" colorpicker>Pick a color!</a>
 }}}
 
 Or, if you don't swing that way,
 
-{{{html
+{{{
     <colorpicker class="btn">Sup!</colorpicker>
 }}}
 
@@ -29,7 +29,7 @@ Or, if you don't swing that way,
 As of 26th / July / 2012, the only core differences between this library and
 Stefan's are as follows in the below diff.
 
-{{{javascript
+{{{
 133c133
 <   var Colorpicker = function(element, options, otheroptions){
 ---
