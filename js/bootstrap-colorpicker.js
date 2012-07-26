@@ -332,10 +332,6 @@
 		return this.each(function () {
 			var $this = $(this);
 
-			$this.each(function() {
-				this.setAttribute("data-color", initialColor);
-			});
-
 			var	data = $this.data('colorpicker'),
 				options = typeof option == 'object' && option;
 
@@ -343,7 +339,7 @@
 				$this.data('colorpicker', (data = new Colorpicker(this, $.extend({}, $.fn.colorpicker.defaults,options))));
 			}
 
-			if (typeof option == 'string' && option != 'setColor') data[option]();
+			if (typeof option == 'string') data[option]();
 		});
 	};
 
